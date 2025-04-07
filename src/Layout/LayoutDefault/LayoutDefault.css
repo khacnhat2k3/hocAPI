@@ -1,0 +1,344 @@
+/* LayoutDefault.css */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-color: #f8f9fa;
+    --border-color: #ddd;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #f9f9f9;
+  }
+  
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.5rem 0;
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    flex: 0 0 auto;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: var(--transition);
+  }
+  
+  .logo-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
+    flex: 1 1 auto;
+    max-width: 500px;
+    margin: 0 2rem;
+    display: flex;
+    position: relative;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: var(--transition);
+  }
+  
+  .search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .search-bar button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .search-bar button:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Navigation Menu Styles */
+  .nav-menu {
+    flex: 0 0 auto;
+  }
+  
+  .nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    position: relative;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-menu a:hover {
+    color: var(--primary-color);
+  }
+  
+  .cart-link, .user-link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  /* Dropdown Menu Styles */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    padding: 0.5rem 0;
+    display: none;
+    z-index: 10;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--text-color);
+    transition: var(--transition);
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+  }
+  
+  .nav-menu li:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0 0;
+    margin-top: auto;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1.5rem;
+    padding-right: 2rem;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    position: relative;
+  }
+  
+  .footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section a {
+    color: #ddd;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .footer-section a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile Menu Toggle */
+  .mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .search-bar {
+      max-width: 300px;
+      margin: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+      display: block;
+      order: 3;
+    }
+    
+    .logo {
+      order: 1;
+    }
+    
+    .search-bar {
+      order: 2;
+      flex: 1;
+      margin: 0 1rem;
+    }
+    
+    .nav-menu {
+      order: 4;
+      flex-basis: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .nav-menu.active {
+      max-height: 300px;
+    }
+    
+    .nav-menu ul {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 0;
+    }
+    
+    .nav-menu li {
+      width: 100%;
+    }
+    
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding-left: 1rem;
+      display: none;
+    }
+    
+    .nav-menu li:hover .dropdown-menu {
+      display: none;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+    }
+    
+    .footer-section {
+      padding-right: 0;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header-content {
+      justify-content: space-between;
+    }
+    
+    .search-bar {
+      order: 4;
+      flex-basis: 100%;
+      margin: 0.5rem 0;
+      max-width: none;
+    }
+    
+    .nav-menu {
+      order: 5;
+    }
+  }
